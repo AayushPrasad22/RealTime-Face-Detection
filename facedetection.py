@@ -1,8 +1,7 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import Text
 import cv2
 from PIL import Image, ImageTk
-import numpy as np
 
 class RealTimeFaceDetectionApp:
     def __init__(self, root):
@@ -14,7 +13,7 @@ class RealTimeFaceDetectionApp:
         self.video_label.pack(pady=10)
 
         # Create a text box to display the number of detected faces
-        self.result_text = tk.Text(root, height=1, width=20)
+        self.result_text = Text(root, height=1, width=20)
         self.result_text.pack(pady=10)
 
         # Load the pre-trained face detector
@@ -22,6 +21,8 @@ class RealTimeFaceDetectionApp:
 
         # Start video capture
         self.cap = cv2.VideoCapture(0)
+        if not self.cap.isOpened():
+            raise ValueError("Unable to open the webcam.")
         self.update_frame()
 
     def update_frame(self):
