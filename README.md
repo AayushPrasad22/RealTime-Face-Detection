@@ -21,8 +21,8 @@ It also shows the number of faces detected live.
 
 ## 🛠️ Technologies Used  
 - **Python 3**  
-- **OpenCV** (for face detection & video capture)  
+- **OpenCV** (for face detection & video capture) 
 - **Tkinter** (for GUI)  
 - **Pillow (PIL)** (for handling images in Tkinter)  
 
----
+
